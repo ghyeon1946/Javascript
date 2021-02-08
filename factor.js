@@ -1,0 +1,13 @@
+function solution(n) {
+    var answer = 0;
+
+    if(n < 3001)
+    {
+        for(let i = 0; i < n+1; i++)
+        {
+            if(n % i === 0) answer += i;
+        }
+    }
+
+    return answer;
+}
