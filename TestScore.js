@@ -20,7 +20,6 @@ function solution(answers) {
         if(answers[i] === answer3[i%answer3.length])
             score3++;
     }
-
     score = Math.max(score1, score2, score3)
     if(score === score1)
         answer.push(1);
