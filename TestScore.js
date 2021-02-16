@@ -4,31 +4,15 @@ function solution(answers) {
     let answer2 = [2, 1, 2, 3, 2, 4, 2, 5];
     let answer3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
 
-    let score = 0;
-    let score1 = 0;
-    let score2 = 0;
-    let score3 = 0;
+    let score1 = answers.filter((a, i) => a === answer1[i%5]).length;
+    let score2 = answers.filter((a, i) => a === answer2[i%8]).length;
+    let score3 = answers.filter((a, i) => a === answer3[i%10]).length;
 
-    for(let i = 0; i < answers.length; i++)
-    {
-        if(answers[i] === answer1[i%answer1.length])
-            score1++;
+    let score = Math.max(score1, score2, score3);
 
-        if(answers[i] === answer2[i%answer2.length])
-            score2++;
-
-        if(answers[i] === answer3[i%answer3.length])
-            score3++;
-    }
-    score = Math.max(score1, score2, score3)
-    if(score === score1)
-        answer.push(1);
-
-    if(score === score2)
-        answer.push(2);
-
-    if(score === score3)
-        answer.push(3);
+    if(score === score1) answer.push(1);
+    if(score === score2) answer.push(2);
+    if(score === score3) answer.push(3);
 
     return answer;
 }
